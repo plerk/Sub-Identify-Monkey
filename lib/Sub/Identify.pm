@@ -17,7 +17,6 @@ sub get_code_location ($)
   require B;
   my($sub) = @_;
   my $cv = B::svref_2object($sub);
-  $DB::single = 1;
   return ($cv->START->file, $cv->START->line);
 }
 
